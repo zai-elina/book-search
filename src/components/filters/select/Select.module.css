@@ -1,22 +1,19 @@
-.buttonSubmit {
+.select {
   background-color: #4682b4;
   padding: 10px;
   border-radius: 10px;
-  width: 100px;
+  width: 250px;
   padding: 10px;
   font-size: 20px;
   color: #fff;
   margin-left: 10px;
   border: none;
   cursor: pointer;
-  transition: background-color 0.5s;
+  outline: none;
 }
-.buttonSubmit:hover {
-  background-color: #87cefa;
-}
+
 @media (max-width: 449px) {
-  .buttonSubmit {
-    width: 70px;
-    font-size: 15px;
+  .select {
+    width: 280px;
   }
 }

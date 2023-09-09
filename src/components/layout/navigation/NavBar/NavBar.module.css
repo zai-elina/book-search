@@ -5,6 +5,9 @@
   justify-content: space-between;
   align-items: center;
   padding: 0 100px;
+  position: sticky;
+  z-index: 2;
+  top: 0;
 }
 
 .navbarLink {
@@ -17,7 +20,7 @@
   color: #afeeee;
 }
 
-@media (max-width: 426px) {
+@media (max-width: 449px) {
   .navbar {
     padding: 0 20px;
   }

@@ -1,0 +1,32 @@
+.filters {
+  display: flex;
+  gap: 50px;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+.filter {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.filterName {
+  color: #4682b4;
+  font-size: 20px;
+}
+
+@media (max-width: 865px) {
+  .filters {
+    justify-content: center;
+  }
+  .filter {
+    width: 410px;
+  }
+}
+
+@media (max-width: 449px) {
+  .filter {
+    width: 280px;
+  }
+}

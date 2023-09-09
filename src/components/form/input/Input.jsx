@@ -4,6 +4,7 @@ import classes from "./Input.module.css";
 const Input = () => {
   return (
     <input
+      type="search"
       className={classes.input}
       placeholder="Название книги или автора"
     ></input>
