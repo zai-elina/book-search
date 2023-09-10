@@ -1,12 +1,13 @@
 import React from "react";
 import classes from "./Input.module.css";
 
-const Input = () => {
+const Input = ({ setInput }) => {
   return (
     <input
       type="search"
       className={classes.input}
-      placeholder="Название книги или автора"
+      placeholder="Name, author"
+      onChange={(e) => setInput(e.target.value)}
     ></input>
   );
 };

@@ -1,11 +1,23 @@
-import React from "react";
+import React, { useState } from "react";
 import Input from "./input/Input";
 import ButtonSubmit from "./buttonSubmit/ButtonSubmit";
+import { useDispatch } from "react-redux";
+import { setSearchInput } from "../../store/slices/dataSlices";
 
-const Form = () => {
+const Form = ({setQueryTerm}) => {
+  const dispatch = useDispatch();
+  const [input, setInput] = useState("");
+
+  const submitForm = (e) => {
+    e.preventDefault();
+
+    dispatch(setSearchInput({ input }));
+    setQueryTerm(true)
+  };
+
   return (
-    <form>
-      <Input />
+    <form onSubmit={(e) => submitForm(e)}>
+      <Input setInput={setInput} />
       <ButtonSubmit />
     </form>
   );

@@ -9,7 +9,22 @@ const AppRoutes = () => {
     <Routes>
       <Route path="/" element={<PageLayout />}>
         <Route path="/" element={<MainPage />} />
-        <Route path="/book/:id" element={<BookPage />} />
+        <Route
+          path="/book/:id"
+          element={
+            <BookPage
+              book={{
+                id: 6,
+                imgUrl: "",
+                category: "Психология",
+                name: "Мастер",
+                author: "Тим Фудурле",
+                description:
+                  "hgajhgjhgdjsd sjghsjfhhj hssssssssssssss whwjjcsdfskfghskd",
+              }}
+            />
+          }
+        />
       </Route>
     </Routes>
   );

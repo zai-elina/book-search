@@ -6,6 +6,18 @@
   align-items: stretch;
 }
 
+.empty {
+  margin: 0 auto;
+  border: 1px solid #4682b4;
+  padding: 10px;
+  outline: none;
+  border-radius: 10px;
+  width: 300px;
+  padding: 10px;
+  font-size: 20px;
+  background-color: #4682b4;
+}
+
 @media (max-width: 1275px) {
   .bookList {
     grid-template-columns: repeat(3, 300px);

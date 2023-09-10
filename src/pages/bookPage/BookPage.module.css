@@ -1,0 +1,55 @@
+.bookInformation {
+  margin-top: 30px;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  color: #4682b4;
+  flex-wrap: wrap;
+}
+
+.bookImg {
+  background-color: #87cefa;
+  border-radius: 10px;
+  box-shadow: 1px 6px 20px 1px #00000024;
+  width: 500px;
+  height: 500px;
+}
+
+.bookDescription {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.bookCategory {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.bookName {
+  font-weight: 700;
+  font-size: 40px;
+}
+
+.bookAuthor {
+  font-weight: 700;
+  font-size: 25px;
+  opacity: 0.7;
+}
+
+.bookAbout {
+  border: 1px solid #4682b4;
+  padding: 20px;
+  font-size: 20px;
+  border-radius: 10px;
+  word-break: break-all;
+  width: 600px;
+}
+
+@media (max-width: 640px) {
+  .bookAbout {
+    width: 100%;
+  }
+}
