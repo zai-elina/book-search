@@ -2,8 +2,8 @@ import React from "react";
 import Select from "./select/Select";
 import classes from "./Filters.module.css";
 
-const Filters = () => {
-  const filter1 = [
+const Filters = ({ setQueryTerm }) => {
+  const filterCategory = [
     { id: 0, name: "all" },
     { id: 1, name: "art" },
     { id: 2, name: "biography" },
@@ -12,7 +12,7 @@ const Filters = () => {
     { id: 5, name: "medical" },
     { id: 6, name: "poetry" },
   ];
-  const filter2 = [
+  const filterSorting = [
     { id: 0, name: "relevance" },
     { id: 1, name: "newest" },
   ];
@@ -21,11 +21,15 @@ const Filters = () => {
     <div className={classes.filters}>
       <div className={classes.filter}>
         <p className={classes.filterName}>Category:</p>
-        <Select list={filter1} />
+        <Select
+          isCategory={true}
+          list={filterCategory}
+          setQueryTerm={setQueryTerm}
+        />
       </div>
       <div className={classes.filter}>
         <p className={classes.filterName}>Sorting by:</p>
-        <Select list={filter2} />
+        <Select list={filterSorting} setQueryTerm={setQueryTerm} />
       </div>
     </div>
   );

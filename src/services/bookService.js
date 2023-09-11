@@ -10,10 +10,11 @@ export const booksApi = createApi({
   endpoints: (builder) => ({
     getBooks: builder.query({
       query: (data) => {
-        const { searchInput, category } = data;
+        const { searchInput, category, sorting } = data;
         const startRequest = `volumes?q=${searchInput}`;
-        // const subject = data.category !== "all" ? `+subject:${category}` : "";
-        return `${startRequest}&key=${key}&maxResults=30`;
+        const subject = data.category !== "all" ? `+subject:${category}` : "";
+        const orderBy = `&orderBy=${sorting}`;
+        return `${startRequest}${subject}${orderBy}&key=${key}`;
       },
     }),
   }),

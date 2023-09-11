@@ -1,10 +1,10 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Input from "./input/Input";
 import ButtonSubmit from "./buttonSubmit/ButtonSubmit";
 import { useDispatch } from "react-redux";
-import { setSearchInput } from "../../store/slices/dataSlices";
+import { setSearchInput, setTotalItems } from "../../store/slices/dataSlices";
 
-const Form = ({setQueryTerm}) => {
+const Form = ({ setQueryTerm }) => {
   const dispatch = useDispatch();
   const [input, setInput] = useState("");
 
@@ -12,7 +12,7 @@ const Form = ({setQueryTerm}) => {
     e.preventDefault();
 
     dispatch(setSearchInput({ input }));
-    setQueryTerm(true)
+    setQueryTerm(true);
   };
 
   return (

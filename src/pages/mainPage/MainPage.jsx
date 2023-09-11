@@ -7,13 +7,14 @@ import BookList from "../../components/bookList/BookList";
 
 const MainPage = () => {
   const [queryTerm, setQueryTerm] = useState(false);
+  const [totalItems, setTotalItems] = useState(0);
 
   return (
     <main className={classes.mainBlock}>
       <Form setQueryTerm={setQueryTerm} />
-      <Filters />
-      <CountOfSearch />
-      {queryTerm && <BookList queryTerm={queryTerm} />}
+      <Filters setQueryTerm={setQueryTerm} />
+      <CountOfSearch totalItems={totalItems}/>
+      {queryTerm && <BookList queryTerm={queryTerm} setTotalItems={setTotalItems}/>}
     </main>
   );
 };

@@ -5,7 +5,6 @@ const initialState = {
   category: "all",
   sorting: "relevance",
   books: [],
-  totalItems: 0,
 };
 
 export const dataSlice = createSlice({
@@ -17,20 +16,16 @@ export const dataSlice = createSlice({
       state.books = books;
     },
     changeCategory: (state, action) => {
-      const { category } = action.payload;
+      const category= action.payload;
       state.category = category;
     },
     changeSorting: (state, action) => {
-      const { sorting } = action.payload;
+      const sorting = action.payload;
       state.sorting = sorting;
     },
     setSearchInput: (state, action) => {
       const { input } = action.payload;
       state.searchInput = input;
-    },
-    setTotalItems: (state, action) => {
-      const { totalItems } = action.payload;
-      state.totalItems = totalItems;
     },
   },
 });
@@ -40,7 +35,6 @@ export const {
   changeCategory,
   changeSorting,
   setSearchInput,
-  setTotalItems,
 } = dataSlice.actions;
 
 export default dataSlice.reducer;
