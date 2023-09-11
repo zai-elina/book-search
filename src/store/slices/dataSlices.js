@@ -4,7 +4,7 @@ const initialState = {
   searchInput: "",
   category: "all",
   sorting: "relevance",
-  bookList: [],
+  books: [],
   totalItems: 0,
 };
 

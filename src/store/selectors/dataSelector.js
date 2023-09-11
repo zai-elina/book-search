@@ -1,10 +1,18 @@
-export const searchInputSelector = (store) => store.data.searchInput;
+import { createSelector } from "@reduxjs/toolkit";
 
-export const categorySelector = (store) => store.data.category;
+export const searchInputSelector = (state) => state.data.searchInput;
 
-export const sortingSelector = (store) => store.data.sorting;
+export const categorySelector = (state) => state.data.category;
 
-export const bookListSelector = (store) => store.data.bookList;
+export const sortingSelector = (state) => state.data.sorting;
 
-export const totalItemsSelector = (store) => store.data.totalItems;
+export const bookListSelector = (state) => state.data.books;
 
+export const totalItemsSelector = (state) => state.data.totalItems;
+
+export const bookByIDSelector = createSelector(
+  [bookListSelector, (state, id) => id],
+  (books, id) => {
+    return books.filter((book) => book.id === id)[0];
+  }
+);

@@ -2,7 +2,6 @@ import React, { useEffect } from "react";
 import classes from "./BookList.module.css";
 import BookItem from "./bookItem/BookItem";
 import {
-  bookListSelector,
   categorySelector,
   searchInputSelector,
 } from "../../store/selectors/dataSelector";
