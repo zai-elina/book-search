@@ -1,7 +1,7 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
+import { stepPagination } from "../constant";
 
 const key = "AIzaSyAF25h0jb4ysSzwGi33j8cHiXQok_Ou9-8";
-const maxCount = 30;
 
 export const booksApi = createApi({
   reducerPath: "bookApi",
@@ -17,7 +17,7 @@ export const booksApi = createApi({
           const subject = category !== "all" ? `+subject:${category}` : "";
           const orderBy = `&orderBy=${sorting}`;
           const start = `&startIndex=${startIndex}`;
-          const end = `&maxResults=${maxCount}`;
+          const end = `&maxResults=${stepPagination}`;
 
           return `${request}${subject}${start}${end}${orderBy}&key=${key}`;
         } catch (e) {

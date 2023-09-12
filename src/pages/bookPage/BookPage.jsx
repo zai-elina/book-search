@@ -1,11 +1,10 @@
 import React, { useEffect } from "react";
 import classes from "./BookPage.module.css";
-import { Link, useNavigate, useParams } from "react-router-dom";
-import { bookByIDSelector, selectedBookSelector } from "../../store/selectors/dataSelector";
+import { Link, useNavigate } from "react-router-dom";
+import { selectedBookSelector } from "../../store/selectors/dataSelector";
 import { useSelector } from "react-redux";
 
 const BookPage = () => {
-  const { id } = useParams();
   const book = useSelector(selectedBookSelector);
   const { imageLinks, categories, title, authors, description } =
     book.volumeInfo;
