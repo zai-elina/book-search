@@ -4,7 +4,7 @@ import classes from "./BookItem.module.css";
 import { useDispatch } from "react-redux";
 import { selectNewBook } from "../../../store/slices/dataSlices";
 
-const BookItem = ({ book }) => {
+const BookItem = React.memo(({ book }) => {
   const { id } = book;
   const { imageLinks, categories, title, authors } = book.volumeInfo;
   const dispatch = useDispatch();
@@ -35,6 +35,8 @@ const BookItem = ({ book }) => {
       </div>
     </Link>
   );
-};
+});
+
+BookItem.displayName = "BookItem";
 
 export default BookItem;

@@ -20,15 +20,14 @@ export const dataSlice = createSlice({
 
       if (!books) {
         state.books = [];
-      }
-      if (state.startIndex === 0) {
+      } else if (state.startIndex === 0 || books?.length === 0) {
         state.books = books;
       } else {
         state.books = [...state.books, ...books];
       }
     },
     clearBookList: (state, action) => {
-      state.books = [];
+      state.books = action.payload;
     },
     changeCategory: (state, action) => {
       const category = action.payload;

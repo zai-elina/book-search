@@ -20,7 +20,7 @@ const Select = ({ list, isCategory, changeValue, value }) => {
       ? dispatch(changeCategory(value))
       : dispatch(changeSorting(value));
 
-    dispatch(clearBookList());
+    dispatch(clearBookList([]));
     dispatch(setIsLoadingData(true));
     changeValue(value);
   };

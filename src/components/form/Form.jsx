@@ -16,13 +16,13 @@ const Form = () => {
 
   const submitForm = (e) => {
     e.preventDefault();
-    dispatch(clearBookList());
+    dispatch(clearBookList([]));
     dispatch(setIsLoadingData(true));
     dispatch(setSearchInput(inputValue));
   };
 
   return (
-    <form onSubmit={(e) => submitForm(e)}>
+    <form onSubmit={(e) => submitForm(e)} id="submit-form">
       <Input inputValue={inputValue} setInputValue={setInputValue} />
       <ButtonSubmit>Найти</ButtonSubmit>
     </form>
