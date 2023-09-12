@@ -38,6 +38,11 @@ const LoadingBooks = () => {
       }
       dispatch(setIsLoadingData(false));
     }
+    if (error) {
+      dispatch(setIsLoadingData(false));
+      console.error("Ошибка выполнения запроса:", error);
+      alert("Произошла ошибка при загрузке данных");
+    }
   }, [data, isLoading, error, searchInput]);
 
   return (
