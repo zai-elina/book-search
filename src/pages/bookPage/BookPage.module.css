@@ -1,5 +1,5 @@
 .bookInformation {
-  margin-top: 30px;
+  margin: 30px 0;
   flex: 1;
   display: flex;
   justify-content: center;
@@ -7,6 +7,7 @@
   color: #4682b4;
   flex-wrap: wrap;
   align-items: stretch;
+  height: 80vh;
 }
 
 .bookImgContainer {
@@ -23,14 +24,13 @@
   width: 300px;
   border-radius: 10px;
   box-shadow: 1px 6px 20px 1px #00000024;
-}ы
-
+}
 .bookDescription {
   width: 50%;
-  margin-top: 30px;
+  margin-bottom: 30px;
   display: flex;
-  flex-direction: column;
   gap: 30px;
+  flex-direction: column;
 }
 
 .bookCategory {
@@ -55,11 +55,26 @@
   font-size: 20px;
   border-radius: 10px;
   word-break: break-all;
-  width: 600px;
+}
+
+.linkBack {
+  color: #4682b4;
+  font-size: 30px;
+  margin: 10px 120px;
+  transition: color 0.4s;
+}
+.linkBack:hover {
+  color: #87cefa;
 }
 
 @media (max-width: 640px) {
   .bookAbout {
     width: 100%;
+  }
+}
+
+@media (max-width: 449px) {
+  .linkBack {
+    margin: 10px 30px;
   }
 }

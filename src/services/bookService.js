@@ -1,6 +1,7 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
 const key = "AIzaSyAF25h0jb4ysSzwGi33j8cHiXQok_Ou9-8";
+const maxCount = 30;
 
 export const booksApi = createApi({
   reducerPath: "bookApi",
@@ -10,11 +11,14 @@ export const booksApi = createApi({
   endpoints: (builder) => ({
     getBooks: builder.query({
       query: (data) => {
-        const { searchInput, category, sorting } = data;
-        const startRequest = `volumes?q=${searchInput}`;
-        const subject = data.category !== "all" ? `+subject:${category}` : "";
+        const { searchInput, category, sorting, startIndex } = data;
+        const request = `volumes?q=${searchInput}`;
+        const subject = category !== "all" ? `+subject:${category}` : "";
         const orderBy = `&orderBy=${sorting}`;
-        return `${startRequest}${subject}${orderBy}&key=${key}`;
+        const start = `&startIndex=${startIndex}`;
+        const end = `&maxResults=${maxCount}`;
+
+        return `${request}${subject}${start}${end}${orderBy}&key=${key}`;
       },
     }),
   }),

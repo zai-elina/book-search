@@ -8,7 +8,9 @@ export const sortingSelector = (state) => state.data.sorting;
 
 export const bookListSelector = (state) => state.data.books;
 
-export const totalItemsSelector = (state) => state.data.totalItems;
+export const countOfBookSelector = (state) => state.data.countOfBook;
+
+export const startIndexSelector = (state) => state.data.startIndex;
 
 export const bookByIDSelector = createSelector(
   [bookListSelector, (state, id) => id],

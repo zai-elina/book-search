@@ -2,10 +2,10 @@ import React from "react";
 import { Link } from "react-router-dom";
 import classes from "./BookItem.module.css";
 
-const BookItem = ({ book }) => {
+const BookItem = React.memo(({ book }) => {
   const { id } = book;
   const { imageLinks, categories, title, authors } = book.volumeInfo;
-  
+
   return (
     <Link to={`/book/${id}`}>
       <div className={classes.bookContainer}>
@@ -28,6 +28,8 @@ const BookItem = ({ book }) => {
       </div>
     </Link>
   );
-};
+});
+
+BookItem.displayName = "BookItem";
 
 export default BookItem;
