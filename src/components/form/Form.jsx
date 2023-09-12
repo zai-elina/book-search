@@ -2,19 +2,23 @@ import React, { useEffect, useState } from "react";
 import Input from "./input/Input";
 import { ButtonSubmit } from "./button/Button";
 import { useDispatch, useSelector } from "react-redux";
-import { setSearchInput, setTotalItems } from "../../store/slices/dataSlices";
+import {
+  clearBookList,
+  setIsLoadingData,
+  setSearchInput,
+} from "../../store/slices/dataSlices";
 import { searchInputSelector } from "../../store/selectors/dataSelector";
 
-const Form = ({ setQueryTerm }) => {
+const Form = () => {
   const dispatch = useDispatch();
   const searchInput = useSelector(searchInputSelector);
   const [inputValue, setInputValue] = useState(searchInput);
 
   const submitForm = (e) => {
     e.preventDefault();
-
+    dispatch(clearBookList());
+    dispatch(setIsLoadingData(true));
     dispatch(setSearchInput(inputValue));
-    setQueryTerm(true);
   };
 
   return (

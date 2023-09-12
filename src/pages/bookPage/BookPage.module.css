@@ -22,6 +22,7 @@
 }
 .bookImg {
   width: 300px;
+  max-height: 400px;
   border-radius: 10px;
   box-shadow: 1px 6px 20px 1px #00000024;
 }
@@ -76,5 +77,11 @@
 @media (max-width: 449px) {
   .linkBack {
     margin: 10px 30px;
+  }
+}
+
+@media (max-width: 1000px) {
+  .bookDescription {
+    width: 80%;
   }
 }

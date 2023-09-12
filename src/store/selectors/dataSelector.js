@@ -12,6 +12,10 @@ export const countOfBookSelector = (state) => state.data.countOfBook;
 
 export const startIndexSelector = (state) => state.data.startIndex;
 
+export const isLoadingDataSelector = (state) => state.data.isLoadingData;
+
+export const selectedBookSelector = (state) => state.data.selectedBook;
+
 export const bookByIDSelector = createSelector(
   [bookListSelector, (state, id) => id],
   (books, id) => {

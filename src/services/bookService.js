@@ -11,14 +11,18 @@ export const booksApi = createApi({
   endpoints: (builder) => ({
     getBooks: builder.query({
       query: (data) => {
-        const { searchInput, category, sorting, startIndex } = data;
-        const request = `volumes?q=${searchInput}`;
-        const subject = category !== "all" ? `+subject:${category}` : "";
-        const orderBy = `&orderBy=${sorting}`;
-        const start = `&startIndex=${startIndex}`;
-        const end = `&maxResults=${maxCount}`;
+        try {
+          const { searchInput, category, sorting, startIndex } = data;
+          const request = `volumes?q=${searchInput}`;
+          const subject = category !== "all" ? `+subject:${category}` : "";
+          const orderBy = `&orderBy=${sorting}`;
+          const start = `&startIndex=${startIndex}`;
+          const end = `&maxResults=${maxCount}`;
 
-        return `${request}${subject}${start}${end}${orderBy}&key=${key}`;
+          return `${request}${subject}${start}${end}${orderBy}&key=${key}`;
+        } catch (e) {
+          return { error: e.message };
+        }
       },
     }),
   }),

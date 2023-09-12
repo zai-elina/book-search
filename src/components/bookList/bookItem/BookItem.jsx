@@ -1,13 +1,20 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import classes from "./BookItem.module.css";
+import { useDispatch } from "react-redux";
+import { selectNewBook } from "../../../store/slices/dataSlices";
 
-const BookItem = React.memo(({ book }) => {
+const BookItem = ({ book }) => {
   const { id } = book;
   const { imageLinks, categories, title, authors } = book.volumeInfo;
+  const dispatch = useDispatch();
+
+  const changeSelectedBook = () => {
+    dispatch(selectNewBook(book));
+  };
 
   return (
-    <Link to={`/book/${id}`}>
+    <Link to={`/book/${id}`} onClick={() => changeSelectedBook()}>
       <div className={classes.bookContainer}>
         {imageLinks ? (
           <img
@@ -28,8 +35,6 @@ const BookItem = React.memo(({ book }) => {
       </div>
     </Link>
   );
-});
-
-BookItem.displayName = "BookItem";
+};
 
 export default BookItem;
